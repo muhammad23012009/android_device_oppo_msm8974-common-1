@@ -105,6 +105,9 @@ on boot
     chown system system /proc/touchpanel/double_tap_enable
     chmod 0660 /proc/touchpanel/double_tap_enable
 
+    # Bluetooth
+    start init_wlan_bt
+
 on post-fs-data
     # Create OPPO NV item directory
     mkdir /data/opponvitems 0771 radio radio
@@ -269,3 +272,8 @@ service init_wlan_bt /system/bin/sh /system/etc/init_hcismd_up.sh
     user root
     group root
     oneshot
+
+service miniafservice /system/bin/miniafservice
+    class core
+    user root
+    group audio
