@@ -108,6 +108,9 @@ on boot
     # Bluetooth
     start init_wlan_bt
 
+    # Audio
+    start miniafservice
+
 on post-fs-data
     # Create OPPO NV item directory
     mkdir /data/opponvitems 0771 radio radio
