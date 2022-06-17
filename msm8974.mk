@@ -107,6 +107,11 @@ PRODUCT_COPY_FILES += \
 # HIDL
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 
+# Health 
+PRODUCT_PACKAGES += \
+    android.hardware.health@1.0-impl \
+    android.hardware.health@1.0-service
+
 # IPC router config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
@@ -129,6 +134,14 @@ PRODUCT_PACKAGES += \
 # LiveDisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sysfs
+
+PRODUCT_PACKAGES += \
+    libhwbinder \
+    libhwbinder.vendor \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhidlbase \
+    libunwindstack.vendor
 
 # Media profile
 PRODUCT_COPY_FILES += \
