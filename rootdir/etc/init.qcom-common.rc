@@ -212,7 +212,7 @@ service qseecomd /system/vendor/bin/qseecomd
     user root
     group root
 
-service charger /charger
+service charger /sbin/healthd -c
     class charger
     critical
     seclabel u:r:healthd:s0
