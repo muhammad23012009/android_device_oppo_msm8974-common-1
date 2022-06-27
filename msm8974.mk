@@ -50,10 +50,10 @@ PRODUCT_PACKAGES += \
     tinymix
 
 # Bluetooth
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl \
-    android.hardware.bluetooth@1.0-service \
-    libbt-vendor
+#PRODUCT_PACKAGES += \
+#    android.hardware.bluetooth@1.0-impl \
+#    android.hardware.bluetooth@1.0-service \
+#    libbt-vendor
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -221,15 +221,20 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti
 
+# RIL
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.1-service \
+    android.hardware.radio@1.1-impl \
+    rild \
+    libtime_genoff
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.qcom-common.rc \
     init.qcom.power.rc \
     init.recovery.qcom.rc \
+    init.ubuntu.rc \
     ueventd.qcom.rc
-
-PRODUCT_PACKAGES += \
-    init.qcom.bt.sh
 
 # Seccomp
 PRODUCT_COPY_FILES += \
@@ -239,7 +244,13 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service \
     sensorservice
+
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0-impl \
+    android.hardware.thermal@1.0-service
 
 # Thermal config
 PRODUCT_COPY_FILES += \
