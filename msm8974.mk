@@ -225,8 +225,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.1-service \
     android.hardware.radio@1.1-impl \
-    rild \
-    libtime_genoff
+    rild
 
 # Ramdisk
 PRODUCT_PACKAGES += \

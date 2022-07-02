@@ -1,7 +1,6 @@
 on early-boot
     start miniafservice
     start init_wlan_bt
-    start sensorservice
 
 service init_wlan_bt /system/bin/sh /system/etc/init_hcismd_up.sh
     class main
@@ -13,9 +12,3 @@ service miniafservice /system/bin/miniafservice
     class core
     user root
     group audio
-
-service sensorservice /system/bin/sensorservice
-    class main
-    user root
-    group root
-
