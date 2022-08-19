@@ -183,6 +183,9 @@ endif
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
+PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.0-service
+
 # OMX HALs
 PRODUCT_PACKAGES += \
     android.hardware.media.omx@1.0-service \
