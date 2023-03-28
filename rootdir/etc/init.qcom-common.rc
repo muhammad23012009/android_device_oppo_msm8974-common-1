@@ -213,10 +213,9 @@ service qseecomd /system/vendor/bin/qseecomd
     user root
     group root
 
-service charger /sbin/healthd -c
+service vendor.charger /charger
     class charger
-    critical
-    seclabel u:r:healthd:s0
+    seclabel u:r:charger:s0
 
 on charger
     write /sys/class/leds/lcd-backlight/brightness 100
