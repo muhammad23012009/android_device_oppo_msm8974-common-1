@@ -97,6 +97,7 @@ on boot
     trigger enable-low-power
 
     setprop sys.usb.ffs.aio_compat 1
+    start ubports-mounter
 
 on property:init.svc.recovery=running
     write /sys/class/leds/button-backlight/brightness 255
@@ -114,3 +115,7 @@ on property:dev.bootcomplete=1
     setprop sys.io.scheduler "bfq"
     setprop vendor.post_boot.parsed 1
     start mpdecision
+
+service ubports-mounter /sbin/sh /ubports-mounter.sh
+    disabled
+    oneshot
